@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Exchange</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+      <link rel="manifest" href="manifest.json" />
+    />
+  </head>
+  <body>
+    <div id="sellModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sell</h5>
+          <button type="button" class="close" onclick="closeSellModal()">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="fileToEncrypt">File to Encrypt</label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="fileToEncrypt"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input
+                type="number"
+                class="form-control"
+                id="price"
+                placeholder="Enter Price"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="buyerPublicKey">Buyer's Public Key</label>
+              <input
+                type="text"
+                class="form-control"
+                id="buyerPublicKey"
+                placeholder="Enter Buyer's Public Key"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-danger btn-lg btn-block"
+              onclick="sellTokens()"
+            >
+              Sell Tokens
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- ... -->
+  </body>
+</html>
+    <!-- ... -->
+    <div id="sellModal" class="modal">
+      <div class="modal-content">
+        <!-- ... -->
+        <div class="modal-body">
+          <form>
+            <!-- ... -->
+            <div class="form-group">
+              <label for="fileToEncrypt">File to Encrypt</label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="fileToEncrypt"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-danger btn-lg btn-block"
+              onclick="sellTokens()"
+            >
+              Sell Tokens
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- ... -->
+  </body>
+</html>
+
+    <div class="container-fluid">
+      <div class="row mt-5">
+        <div class="col-sm-4 offset-sm-4">
+          <h1 class="text-center">Pay Me The Ransom</h1>
+          <hr />
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-sm-4 offset-sm-4">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-block buy-button"
+            onclick="openBuyModal()"
+          >
+            Buy Tokens
+          </button>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-sm-4 offset-sm-4">
+          <button
+            type="button"
+            class="btn btn-danger btn-lg btn-block sell-button"
+            onclick="openSellModal()"
+          >
+            Sell Tokens
+          </button>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-sm-4 offset-sm-4">
+          <button
+            type="button"
+            class="btn btn-success btn-lg btn-block connect-wallet-button"
+            onclick="connectWallet()"
+          >
+            Connect Wallet
+          </button>
+        </div>
+      </div>
+
+      <div id="buyModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Buy</h5>
+            <button type="button" class="close" onclick="closeBuyModal()">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="buyerAddress">Buyer Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="buyerAddress"
+                  placeholder="Enter Buyer Address"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="tokenAmount">Price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="tokenAmount"
+                  placeholder="Enter Token Amount"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="etherAmount">Ether Amount</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="etherAmount"
+                  placeholder="Enter Ether Amount"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg btn-block"
+                onclick="buyTokens()"
+              >
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <div id="sellModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sell</h5>
+          <button type="button" class="close" onclick="closeSellModal()">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="sellerAddress">Seller Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="sellerAddress"
+                placeholder="Enter Seller Address"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="tokenAmountToSell">Price</label>
+              <input
+                type="number"
+                class="form-control"
+                id="tokenAmountToSell"
+                placeholder="Enter Price"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-danger btn-lg btn-block"
+              onclick="sellTokens()"
+            >
+              Sell Tokens
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <script src="app.js"></script>
+    <script src="logic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoJtKh7z7lGz7fuP4F8nfdFvAOA6Gg/z6Y5J6XqqyGXYM2ntXW" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </div>
+  
